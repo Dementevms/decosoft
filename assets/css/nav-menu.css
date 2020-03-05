@@ -1,0 +1,114 @@
+.nav__menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__menu ul > li {
+  display: inline-block;
+  margin: 0 40px 0 0;
+  padding: 28px 0;
+  position: relative;
+}
+
+.nav__menu ul > li:last-child {
+  margin: 0;
+}
+
+.nav__menu ul > li::before {
+  display: block;
+  content: "";
+  background-color: #76b900;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -50%;
+  transform: scaleX(0);
+  transition: all 0.5s ease;
+}
+
+.nav__menu ul > li.active::before {
+  left: 0;
+  transform: scaleX(1);
+}
+
+.nav__menu ul > li > a {
+  display: block;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #3b3b3b;
+  transition: all 0.33s ease;
+}
+
+#header.opacity .nav__menu ul > li > a {
+  color: #fff;
+}
+
+.nav__menu ul > li.active > a {
+  color: #76b900;
+}
+
+.nav__menu ul > li > a:hover {
+  color: #76b900;
+}
+
+.nav__menu ul > li > ul {
+  display: none;
+  background-color: #76b900;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 180px;
+  position: absolute;
+  top: 75px;
+  left: 0;
+}
+
+.nav__menu ul > li > ul::before {
+  display: block;
+  content: "";
+  background-color: #76b900;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: -5px;
+  left: 15px;
+  transform: rotateZ(45deg);
+}
+
+.nav__menu ul > li.parent:hover > ul {
+  display: block;
+}
+
+.nav__menu ul > li > ul > li {
+  margin: 0;
+  padding: 0;
+}
+
+.nav__menu ul > li > ul > li > a {
+  display: block;
+  background-color: transparent;
+  border-top: 1px dotted rgba(0, 0, 0, 0.25);
+  padding: 10px 20px;
+  width: 140px;
+  position: relative;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all 0.33s ease;
+}
+
+.nav__menu ul > li > ul > li:first-child > a {
+  border: none;
+}
+
+.nav__menu ul > li > ul > li.active > a,
+.nav__menu ul > li > ul > li > a:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
